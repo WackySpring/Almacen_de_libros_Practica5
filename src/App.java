@@ -67,37 +67,31 @@ public class App {
         return scanner.nextInt();
     }
 
-    private static void crearLibro(Almacen almacen) throws Exception {
+    private static void crearLibro(Almacen almacen) {
         // Crear un libro
         if (almacen == null) {
             System.err.println("Primero debe crear un almacen de libros (presione Enter para continuar)");
             scanner.nextLine();
             return;
         }
-        try {
-            System.out.print("Introduzca el nombre del autor: ");
-            String nombre = scanner.nextLine();
-            System.out.print("Introduzca los apellidos: ");
-            String apellidos = scanner.nextLine();
-            System.out.print("¿Ha ganado el premio Planeta? (true/false): ");
-            boolean planeta = scanner.nextBoolean();
-            scanner.nextLine(); // Limpiar el buffer
-            Autor autor = new Autor(nombre, apellidos, planeta);
-            System.out.print("Introduzca el título: ");
-            String titulo = scanner.nextLine();
-            System.out.print("Introduzca el año de lanzamiento: ");
-            int ano = scanner.nextInt();
-            System.out.print("Introduzca el número de paginas: ");
-            int paginas = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
-            System.out.print("Introduzca el precio: ");
-            float precio = Float.parseFloat(scanner.nextLine());
-            almacen.addLibro(new Libro(autor, titulo, ano, paginas, precio));
-        } catch (Exception e) {
-            System.err.println("Error al introducir los datos del libro (presione Enter para continuar)");
-            scanner.nextLine();
-            return;
-        }
+        System.out.print("Introduzca el nombre del autor: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Introduzca los apellidos: ");
+        String apellidos = scanner.nextLine();
+        System.out.print("¿Ha ganado el premio Planeta? (true/false): ");
+        boolean planeta = scanner.nextBoolean();
+        scanner.nextLine(); // Limpiar el buffer
+        Autor autor = new Autor(nombre, apellidos, planeta);
+        System.out.print("Introduzca el título: ");
+        String titulo = scanner.nextLine();
+        System.out.print("Introduzca el año de lanzamiento: ");
+        int ano = scanner.nextInt();
+        System.out.print("Introduzca el número de paginas: ");
+        int paginas = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+        System.out.print("Introduzca el precio: ");
+        float precio = Float.parseFloat(scanner.nextLine());
+        almacen.addLibro(new Libro(autor, titulo, ano, paginas, precio));
     }
 
     private static void mostrarLibros(int ritmo, Libro[] libros) {
