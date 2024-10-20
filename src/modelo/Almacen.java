@@ -6,7 +6,7 @@ public class Almacen {
     private int numeroLibros = 10;
     private Libro[] libros = new Libro[numeroLibros];
 
-    public void setNumeroLibros(int numeroLibros) {
+    public Almacen(int numeroLibros) {
         this.numeroLibros = numeroLibros;
         libros = new Libro[numeroLibros];
     }

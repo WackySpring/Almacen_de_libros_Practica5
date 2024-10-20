@@ -30,8 +30,7 @@ public class App {
         while (opcion != 5) {
             switch (opcion) {
                 case 1:
-                    almacen = new Almacen();
-                    establecerNumeroLibros(almacen);
+                    almacen = CrearAlmacen();
                     libros = almacen.getLibros();
                     break;
                 case 2:
@@ -53,12 +52,13 @@ public class App {
         System.out.println("Saliendo...");
     }
 
-    private static void establecerNumeroLibros(Almacen almacen) {
+    private static Almacen CrearAlmacen() {
         // Establecer el número de libros
         System.out.print("Introduzca el número de libros: ");
         int numeroLibros =  scanner.nextInt();
-        almacen.setNumeroLibros(numeroLibros);
         scanner.nextLine(); // Limpiar el buffer
+        Almacen almacen = new Almacen(numeroLibros);
+        return almacen;
     }
 
     private static int establecerRitmo() {
