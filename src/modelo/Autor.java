@@ -19,6 +19,10 @@ public class Autor {
         return apellidos;
     }
 
+    public String getNombreCompleto() {
+        return nombre + " " + apellidos;
+    }
+
     public String isPremioPlaneta() {
         if(premioPlaneta){
             return "Sí";
